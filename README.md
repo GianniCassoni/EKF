@@ -1,7 +1,7 @@
 # EKF
 Extended kalman filter
 example:  
-```
+```matlab
 % Initialize the EKF with the first two measurements and the input 
 x = EKF('initial',[d(2) d(3)]',u(1), t(1), dim, x0, P0, Q, R); 
 
