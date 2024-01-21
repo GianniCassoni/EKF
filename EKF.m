@@ -25,9 +25,9 @@ if (ischar(x) && strcmp(x,'initial')) % check if the input x is a string 'initia
     x = x0'; % set the initial state vector
 end
 
-[x,F,~,~] = BDFT_Discrete(x,u,t); % predict the state and the state transition matrix using the BDFT_Discrete function
+[x,F,~,~] = Function_estimation(x,u,t); % predict the state and the state transition matrix using the Function_estimation function
 P = F*P*F' + Q; % predict the state covariance matrix
-[~,~,h,H] = BDFT_Discrete(x,u,t); % compute the measurement and the measurement matrix using the BDFT_Discrete function
+[~,~,h,H] = Function_estimation(x,u,t); % compute the measurement and the measurement matrix using the Function_estimation function
 r = d - h; % compute the measurement residual
 S = H*P*H'+ R; % compute the residual covariance matrix
 K = P*H'/S; % compute the Kalman gain
